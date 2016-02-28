@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Requests;
 use App\Post;
 use App\Image;
+use App\User;
 use Illuminate\Support\Facades\Validator;
 use Session;
 use Illuminate\Support\Facades\Redirect;
@@ -15,6 +16,7 @@ use Illuminate\Support\Facades\Redirect;
 class PostController extends Controller
 {
     protected $post;
+    private   $api_key = "AIzaSyAVsh8KMoQWxdqOYtU-Ft47Bw_ba-9nnFk";
 
     public function __construct(Post $post) {
         $this->post = $post;
@@ -43,11 +45,6 @@ class PostController extends Controller
         if (Auth::check()) {
             $post = Post::where('id', $id)->first();
 
-            $json = file_get_contents('https://api.foursquare.com/v2/venues/search?ll=49.2496600,-123.1193400&client_id=UDNOKJGW1TZDLVCU5UELS33ERA3MCXCM2U4U2513P3CDJM2K&client_secret=T1NIPNFJZCOFVXEDNXQFE2HZNXJCAG50VWE40AIUP0RKTNPA&v=20160217&limit=5');
-            $obj = json_decode($json);
-
-            $post->venues = $obj->response->venues;
-
             // Format the price
             $post->price = $this->asDollars($post->price);
 
@@ -57,10 +54,19 @@ class PostController extends Controller
 
             $main_image = Image::where('post_id', $id)->first();
             $images     = Image::where('post_id', $id)->get();
+            $email      = User::where('id', $post->user_id)->first()->email;
+            $location   = $this->getCoordinates($post->address, $post->city, $post->province);
+
+            // Get foursquare data
+            $json = file_get_contents('https://api.foursquare.com/v2/venues/search?ll=' . $location['lat'] . ',' . $location['lng'] . '&client_id=UDNOKJGW1TZDLVCU5UELS33ERA3MCXCM2U4U2513P3CDJM2K&client_secret=T1NIPNFJZCOFVXEDNXQFE2HZNXJCAG50VWE40AIUP0RKTNPA&v=20160217&limit=5');
+            $obj  = json_decode($json);
+
+            $post->venues = $obj->response->venues;
 
             if($main_image) {
                 $post->main_image = $main_image;
                 $post->images     = $images;
+                $post->email      = $email;
             }
 
             return view('posts.show', array('post' => $post));
@@ -95,5 +101,25 @@ class PostController extends Controller
 
     private function asDollars($value) {
         return '$' . number_format($value, 2);
+    }
+
+    private function getCoordinates($address, $city, $province) {
+        $service_url = 'https://maps.googleapis.com/maps/api/geocode/json?address='
+                       . urlencode($address)
+                       . ',' . urlencode($city)
+                       . ',' . urlencode($province)
+                       . '&key=' . $this->api_key;
+        $curl = curl_init($service_url);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
+        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
+        //execute the session
+        $curl_response = curl_exec($curl);
+        //finish off the session
+        curl_close($curl);
+        $curl_jason = json_decode($curl_response, true);
+
+        $location = $curl_jason['results'][0]['geometry']['location'];
+        return $location;
     }
 }

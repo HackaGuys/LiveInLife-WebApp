@@ -11,7 +11,9 @@
             {!! Form::open(array('url' => 'search')) !!}
             <div class="form-group">
                 <div class="input-group">
-                    {!! Form::text('city', 'Vancouver', array('class' => 'form-control', 'placeholder' => 'Enter your city name')) !!}
+                    {!! Form::text('city', 'Vancouver', array('class'       => 'form-control',
+                                                              'placeholder' => 'Enter your city name',
+                                                              'required'    => 'required')) !!}
                     <span class="input-group-btn">
                         <select class="btn" name="province">
                             <option>Alberta</option>

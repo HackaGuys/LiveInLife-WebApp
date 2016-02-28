@@ -32,6 +32,8 @@
         </div>
         <div class="col-md-4 col-xs-6">
             <dl>
+                <dt>Address: </dt>
+                <dd>{{ $post->address }}</dd>
                 <dt>City: </dt>
                 <dd>{{ $post->city }}</dd>
                 <dt>Province: </dt>
@@ -44,6 +46,8 @@
                 <dd>{{ $post->sqfeet }}</dd>
                 <dt>Price: </dt>
                 <dd>{{ $post->price }}</dd>
+                <dt>Contact: </dt>
+                <dd>{{ $post->email }}</dd>
             </dl>
         </div>
         <div class="col-xs-8 col-xs-offset-2 visible-sm visible-xs">
