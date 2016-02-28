@@ -26,9 +26,11 @@
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
-    //
-});
+
+//Route::resource('post', 'PostController', ['only' => [
+//    'index'
+//]]);
+
 
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
