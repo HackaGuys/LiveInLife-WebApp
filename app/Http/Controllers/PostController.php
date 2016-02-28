@@ -47,7 +47,7 @@ class PostController extends Controller
     }
 
     public function show($id) {
-        if (Auth::check()) {
+//        if (Auth::check()) {
             $post = Post::where('id', $id)->first();
             // Format the price
             $post->price = $this->asDollars($post->price);
@@ -74,8 +74,8 @@ class PostController extends Controller
             }
 
             return view('posts.show', array('post' => $post, 'first' => true));
-        }
-        return Redirect::to('login');
+//        }
+//        return Redirect::to('login');
     }
 
     public function store(Request $request) {
