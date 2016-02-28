@@ -25,6 +25,10 @@ class PostController extends Controller
             $posts = Post::all();
 
             foreach ($posts as $post) {
+                // Format the price
+                $post->price = $this->asDollars($post->price);
+
+                // Get the images
                 $image = Image::where('post_id', $post->id)->first();
 
                 if ($image) {
@@ -40,6 +44,9 @@ class PostController extends Controller
     public function show($id) {
         if (Auth::check()) {
             $post = Post::where('id', $id)->first();
+
+            // Format the price
+            $post->price = $this->asDollars($post->price);
 
             if (!$post) {
                 return Redirect::to('post');
@@ -81,5 +88,9 @@ class PostController extends Controller
             return view('posts.create');
         }
         return Redirect::to('login');;
+    }
+
+    private function asDollars($value) {
+        return '$' . number_format($value, 2);
     }
 }

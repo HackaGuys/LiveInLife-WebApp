@@ -3422,3 +3422,6 @@ Stack trace:
 #56 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(99): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
 #57 C:\xampp\htdocs\LiveInLife\public\index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
 #58 {main}  
+[2016-02-28 09:43:52] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined function App\Http\Controllers\money_format()' in C:\xampp\htdocs\LiveInLife\app\Http\Controllers\PostController.php:51
+Stack trace:
+#0 {main}  

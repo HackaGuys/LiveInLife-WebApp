@@ -39,7 +39,7 @@ class Post extends Model
         'zip'         => 'required|min:6|max:6',
         'bedrooms'    => 'required|max:50|integer',
         'sqfeet'      => 'required|max:500000|integer',
-        'price'       => 'required|integer',
+        'price'       => 'required|numeric',
         'description' => 'required|min:2|max:1000',
     ];
 

@@ -6,13 +6,15 @@
         @foreach ($posts as $post)
             <div class="row">
                 <div class="col-xs-12">
-                    <div class="col-sm-4">
-                        @if ($post->thumbnail != null)
-                            <img class="img-responsive" src="{{ asset('/uploads/' . $post->thumbnail) }}" />
-                        @else
-                            <img class="img-responsive" src="http://placehold.it/300x200"/>
-                        @endif
-                    </div>
+                    <a href=" {{ url('post/' . $post->id) }} ">
+                        <div class="col-sm-4">
+                            @if ($post->thumbnail != null)
+                                <img class="img-responsive" src="{{ asset('/uploads/' . $post->thumbnail) }}" />
+                            @else
+                                <img class="img-responsive" src="http://placehold.it/300x200"/>
+                            @endif
+                        </div>
+                    </a>
                     <div class="col-sm-4">
                         <p>
                             @if (count($post->description) > 50)
@@ -20,6 +22,8 @@
                             @else
                                 {{ $post->description }}
                             @endif
+                            <br />
+                            <a href=" {{ url('post/' . $post->id) }} ">View Details</a>
                         </p>
                     </div>
                     <div class="col-sm-4">
@@ -36,47 +40,7 @@
                     </div>
                 </div>
             </div>
-            @endforeach
-        <!--<table class="table">
-            <tr>
-                <th>Image</th>
-                <th>Description</th>
-                <th>City</th>
-                <th>Bedrooms</th>
-                <th>Square Ft.</th>
-                <th>Price</th>
-            </tr>
-            @foreach ($posts as $post)
-                <tr>
-                    <td>
-                        @if ($post->thumbnail != null)
-                            <img src="{{ asset('/uploads/' . $post->thumbnail) }}" />
-                        @else
-                            <img src="http://placehold.it/300x200"/>
-                        @endif
-                    </td>
-                    <td>
-                        @if (count($post->description) > 50)
-                            {{ substr($post->description, 0, 50) }}
-                        @else
-                            {{ $post->description }}
-                        @endif
-                    </td>
-                    <td>
-                        {{ $post->city }}
-                    </td>
-                    <td>
-                        {{ $post->bedrooms }}
-                    </td>
-                    <td>
-                        {{ $post->sqfeet }}
-                    </td>
-                    <td>
-                        {{ $post->price }}
-                    </td>
-                </tr>
-            @endforeach
-        </table>-->
+        @endforeach
     </div>
 </div>
 @endsection
