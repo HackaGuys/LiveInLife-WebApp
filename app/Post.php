@@ -43,6 +43,11 @@ class Post extends Model
         'description' => 'required|min:2|max:1000',
     ];
 
+    public function images()
+    {
+        return $this->hasMany('App\Image');
+    }
+
     public function isValid() {
         $v = Validator::make(array_merge($this->attributes, array('post' => $this->post)), static::$rules);
 
