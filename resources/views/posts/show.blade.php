@@ -56,14 +56,17 @@
         <div class="col-md-12">
             <h2>Nearby Hotspots</h2>
             @foreach($post->venues as $venue)
-                <div class="venue">
-                    <div><img src="{{ $venue->categories[0]->icon->prefix }}64{{$venue->categories[0]->icon->suffix}}" class="category-icon"/></div>
-                    <div class="venue-info">
-                        <div>{{$venue->name}}</div>
-                        <div>{{$venue->contact->formattedPhone or ""}}</div>
-                        <div>{{$venue->location->address or ""}}</div>
+                @if(count($venue->categories))
+                    <div class="venue">
+                        <img src="{{ $venue->categories[0]->icon->prefix or ""}}64{{$venue->categories[0]->icon->suffix or ""}}" class="category-icon"/>
+                        <div class="venue-info">
+                            <div>{{$venue->name}}</div>
+                            <div>{{$venue->contact->formattedPhone or ""}}</div>
+                            <div>{{$venue->location->address or ""}}</div>
+                        </div>
                     </div>
-                </div>
+                @endif
+
             @endforeach
         </div>
     </div>

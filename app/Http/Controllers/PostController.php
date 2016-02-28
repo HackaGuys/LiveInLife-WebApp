@@ -43,7 +43,7 @@ class PostController extends Controller
         if (Auth::check()) {
             $post = Post::where('id', $id)->first();
 
-            $json = file_get_contents('https://api.foursquare.com/v2/venues/search?ll=49.2496600,-123.1193400&client_id=UDNOKJGW1TZDLVCU5UELS33ERA3MCXCM2U4U2513P3CDJM2K&client_secret=T1NIPNFJZCOFVXEDNXQFE2HZNXJCAG50VWE40AIUP0RKTNPA&v=20160217&limit=5');
+            $json = file_get_contents('https://api.foursquare.com/v2/venues/search?ll=49.2496600,-123.1193400&client_id=UDNOKJGW1TZDLVCU5UELS33ERA3MCXCM2U4U2513P3CDJM2K&client_secret=T1NIPNFJZCOFVXEDNXQFE2HZNXJCAG50VWE40AIUP0RKTNPA&v=20160217&limit=5&categoryId=4d4b7104d754a06370d81259,4d4b7105d754a06372d81259,4d4b7105d754a06374d81259,4d4b7105d754a06378d81259');
             $obj = json_decode($json);
 
             $post->venues = $obj->response->venues;
