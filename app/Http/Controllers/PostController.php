@@ -3,35 +3,52 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 use App\Http\Requests;
 use App\Post;
+use Illuminate\Support\Facades\Validator;
+use Session;
+use Illuminate\Support\Facades\Redirect;
 
 class PostController extends Controller
 {
+    protected $post;
+
+    public function __construct(Post $post) {
+        $this->post = $post;
+    }
+
     public function index() {
-        $posts = Post::all();
-        return response()->json($posts);
+        if (Auth::check()) {
+            $posts = Post::all();
+            return response()->json($posts);
+        }
+        return Redirect::to('login');
     }
 
     public function store(Request $request)
     {
-        $post = new Post();
+        $input = $request->all();
 
-        $post->user_id = 1;
-        $post->address = $request->input('address');
-        $post->city = $request->input('city');
-        $post->province = $request->input('province');
-        $post->zip = $request->input('zip');
-        $post->bedrooms = $request->input('bedrooms');
-        $post->sqfeet = $request->input('sqfeet');
-        $post->price = $request->input('price');
-        $post->description = $request->input('description');
+        $this->post->fill($input);
+        $this->post->user_id = Auth::user()->id;
+        $this->post->images  = $request->file('images');
 
-        $post->save();
+        if (!$this->post->isValid()) {
+            return redirect()->back()->withErrors($this->post->messages);
+        }
+
+        $this->post->save();
+        $this->post->finalize($this->post->id);
+
+        return redirect('post');
     }
 
     public function create(){
-        return view('posts.create');
+        if (Auth::check()) {
+            return view('posts.create');
+        }
+        return Redirect::to('login');;
     }
 }
