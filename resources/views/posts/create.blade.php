@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    {!! Form::open(array('route' => 'posts.store')) !!}
+    {!! Form::open(array('route' => 'post.store')) !!}
     <div>
         {!! Form::label('address', 'Address') !!} <br />
         {!! Form::text('address') !!}
