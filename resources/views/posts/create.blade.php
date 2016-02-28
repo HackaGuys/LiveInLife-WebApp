@@ -47,7 +47,6 @@
             @if(Session::has('error'))
                 <p class="errors">{!! Session::get('error') !!}</p>
             @endif
-
             {!! Form::submit('Submit!', array('class' => 'btn btn-primary')) !!}
             {!! Form::close() !!}
         </div>

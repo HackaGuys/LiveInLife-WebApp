@@ -24,6 +24,7 @@ class ApiController extends Controller
     {
         $post = new Post();
 
+        $post->user_id = 1;
         $post->address = $request->input('address');
         $post->city = $request->input('city');
         $post->province = $request->input('province');
@@ -31,6 +32,7 @@ class ApiController extends Controller
         $post->bedrooms = $request->input('bedrooms');
         $post->sqfeet = $request->input('sqfeet');
         $post->price = $request->input('price');
+        $post->description = $request->input('description');
 
         $post->save();
     }
