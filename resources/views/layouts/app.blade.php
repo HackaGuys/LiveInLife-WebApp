@@ -27,14 +27,6 @@
         .fa-btn {
             margin-right: 6px;
         }
-
-        .venue{
-            padding: 2.5% 0 2.5% 0;
-        }
-        
-        .category-icon{
-            background: red;
-        }
     </style>
 </head>
 <body id="app-layout">

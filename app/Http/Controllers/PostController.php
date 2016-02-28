@@ -44,7 +44,6 @@ class PostController extends Controller
     public function show($id) {
         if (Auth::check()) {
             $post = Post::where('id', $id)->first();
-
             // Format the price
             $post->price = $this->asDollars($post->price);
 

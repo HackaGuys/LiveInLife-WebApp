@@ -15,3 +15,20 @@ body {
 .btn-search {
 
 }
+
+.venue{
+    margin: 2.5% 0 2.5% 0;
+    height: 100px;
+    clear: both;
+}
+
+.category-icon{
+    background: red;
+    border-radius: 10px;
+    float: left;
+}
+
+.venue-info{
+    float: left;
+    padding-left: 10px;
+}
