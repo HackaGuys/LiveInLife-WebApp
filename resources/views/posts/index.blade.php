@@ -19,7 +19,7 @@
                     </a>
                     <div class="col-sm-4">
                         <p>
-                            @if (count($post->description) > 50)
+                            @if (strlen($post->description) > 50)
                                 {{ substr($post->description, 0, 50) }}
                             @else
                                 {{ $post->description }}
