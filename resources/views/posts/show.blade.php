@@ -75,6 +75,7 @@
             </div>
 
             <div class="col-md-6">
+                <h2>Map</h2>
                 <iframe
                         width="100%"
                         height="350"
