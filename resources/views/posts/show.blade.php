@@ -57,21 +57,33 @@
             </p>
         </div>
 
-        <div class="col-md-12">
-            <h2>Nearby Hotspots</h2>
-            @foreach($post->venues as $venue)
-                @if(count($venue->categories))
-                    <div class="venue">
-                        <img src="{{ $venue->categories[0]->icon->prefix or ""}}64{{$venue->categories[0]->icon->suffix or ""}}" class="category-icon"/>
-                        <div class="venue-info">
-                            <div>{{$venue->name}}</div>
-                            <div>{{$venue->contact->formattedPhone or ""}}</div>
-                            <div>{{$venue->location->address or ""}}</div>
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Nearby Hotspots</h2>
+                @foreach($post->venues as $venue)
+                    @if(count($venue->categories))
+                        <div class="venue">
+                            <img src="{{ $venue->categories[0]->icon->prefix or ""}}64{{$venue->categories[0]->icon->suffix or ""}}" class="category-icon"/>
+                            <div class="venue-info">
+                                <div>{{$venue->name}}</div>
+                                <div>{{$venue->contact->formattedPhone or ""}}</div>
+                                <div>{{$venue->location->address or ""}}</div>
+                            </div>
                         </div>
-                    </div>
-                @endif
+                    @endif
+                @endforeach
+            </div>
 
-            @endforeach
+            <div class="col-md-6">
+                <h2>Map</h2>
+                <iframe
+                        width="100%"
+                        height="350"
+                        frameborder="0" style="border:0"
+                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyARB60vYWpNMf4QiTjKFRluFWFTJdQjP1Y
+                        &q={{$post->address}}+{{$post->city}}+{{$post->province}}" allowfullscreen>
+                </iframe>
+            </div>
         </div>
     </div>
 </div>
