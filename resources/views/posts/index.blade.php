@@ -30,6 +30,8 @@
                     </div>
                     <div class="col-sm-4">
                         <dl>
+                            <dt>Address: </dt>
+                            <dd>{{ $post->address }}</dd>
                             <dt>City: </dt>
                             <dd>{{ $post->city }}</dd>
                             <dt>Bedrooms: </dt>
