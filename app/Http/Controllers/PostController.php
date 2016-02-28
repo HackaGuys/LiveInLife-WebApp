@@ -18,6 +18,7 @@ class PostController extends Controller
     {
         $post = new Post();
 
+        $post->user_id = 1;
         $post->address = $request->input('address');
         $post->city = $request->input('city');
         $post->province = $request->input('province');
