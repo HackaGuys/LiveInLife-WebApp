@@ -6,7 +6,7 @@ Homestead.json
 .env
 .env.php
 .idea
-storage/logs/
+/storage/
 
 # Created by https://www.gitignore.io/api/phpstorm
 

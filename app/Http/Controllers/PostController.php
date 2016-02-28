@@ -26,6 +26,7 @@ class PostController extends Controller
         $post->bedrooms = $request->input('bedrooms');
         $post->sqfeet = $request->input('sqfeet');
         $post->price = $request->input('price');
+        $post->description = $request->input('description');
 
         $post->save();
     }

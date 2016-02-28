@@ -11,7 +11,7 @@
         {!! Form::text('city') !!}
     </div>
     <div>
-        {!! Form::label('provice', 'City') !!} <br />
+        {!! Form::label('province', 'Province') !!} <br />
         {!! Form::text('province') !!}
     </div>
     <div>
@@ -29,6 +29,10 @@
     <div>
         {!! Form::label('price', 'Price') !!} <br />
         {!! Form::text('price') !!}
+    </div>
+    <div>
+        {!! Form::label('description', 'Description') !!} <br />
+        {!! Form::textarea('description') !!}
     </div>
 
 
