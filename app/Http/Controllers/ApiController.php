@@ -34,8 +34,4 @@ class ApiController extends Controller
 
         $post->save();
     }
-
-    public function create(){
-        return view('posts/create');
-    }
 }
