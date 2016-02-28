@@ -52,7 +52,7 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/') }}">Home</a></li>
-                    <li><a href="{{ url('/post') }}">Postings</a></li>
+                    <li><a href="{{ url('/post') }}">My Posts</a></li>
 
                     @if (Auth::check())
                         <li><a href="{{ url('/post/create') }}">Sell</a></li>

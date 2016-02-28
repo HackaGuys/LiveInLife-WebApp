@@ -12,6 +12,7 @@ use App\User;
 use Illuminate\Support\Facades\Validator;
 use Session;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Input;
 
 class PostController extends Controller
 {
@@ -23,7 +24,12 @@ class PostController extends Controller
     }
 
     public function index() {
-            $posts = Post::all();
+            $posts = Post::where('user_id', Auth::user()->id)->get();
+            $count = Post::where('user_id', Auth::user()->id)->count();
+
+            if ($count == 0) {
+                return view('posts.error', array('message' => 'You don\'t have any active posts.'));
+            }
 
             foreach ($posts as $post) {
                 // Format the price
@@ -38,7 +44,6 @@ class PostController extends Controller
             }
 
             return view('posts.index', array('posts' => $posts));
-
     }
 
     public function show($id) {
@@ -73,29 +78,87 @@ class PostController extends Controller
         return Redirect::to('login');
     }
 
-    public function store(Request $request)
-    {
-        $input = $request->all();
+    public function store(Request $request) {
+        if (Auth::check()) {
+            $input = $request->all();
 
-        $this->post->fill($input);
-        $this->post->user_id = Auth::user()->id;
-        $this->post->images  = $request->file('images');
+            $this->post->fill($input);
+            $this->post->user_id = Auth::user()->id;
+            $this->post->images  = $request->file('images');
 
-        if (!$this->post->isValid()) {
-            return redirect()->back()->withErrors($this->post->messages);
+            if (!$this->post->isValid()) {
+                return redirect()->back()->withErrors($this->post->messages);
+            }
+
+            $this->post->save();
+            $this->post->finalize($this->post->id);
+
+            return redirect('/')->with('message', 'Successfully updated created.');
         }
 
-        $this->post->save();
-        $this->post->finalize($this->post->id);
-
-        return redirect('post');
+        return redirect('/');
     }
 
     public function create(){
         if (Auth::check()) {
             return view('posts.create');
         }
+
         return Redirect::to('login');;
+    }
+
+    public function edit($id) {
+        if (Auth::check()) {
+            $post = Post::where('id', $id)->where('user_id', Auth::user()->id)->first();
+
+            if (!$post) {
+                return Redirect::to('/');
+            }
+
+            return view('posts.edit', array('post' => $post));
+        }
+
+        return Redirect::to('login');;
+    }
+
+    public function update($id) {
+        if (Auth::check()) {
+            $this->post = Post::where('id', $id)->where('user_id', Auth::user()->id)->first();
+
+            $this->post->fill(Input::all());
+            $this->post->images = array();
+
+            if (!$this->post->isValid()) {
+                return redirect()->back()->withErrors($this->post->messages);
+            }
+
+            $this->post->save();
+            return redirect('/')->with('message', 'Successfully updated posting.');
+        }
+
+        return redirect('/');
+    }
+
+    public function destroy($id) {
+        if (Auth::check()) {
+            $post = Post::where('id', $id)->where('user_id', Auth::user()->id)->first();
+
+            if ($post) {
+                $images = Image::where('post_id', $post->id)->get();
+
+                foreach ($images as $image) {
+                    @unlink(public_path() . '/uploads/' . $image->filename);
+                    @unlink(public_path() . '/uploads/' . $image->thumbnail_filename);
+
+                    $image->delete();
+                }
+
+                $post->delete();
+                return redirect('/')->with('message', 'Successfully updated deleted.');
+            }
+        }
+
+        return redirect('/');
     }
 
     private function asDollars($value) {

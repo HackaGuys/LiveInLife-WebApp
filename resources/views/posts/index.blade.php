@@ -3,7 +3,7 @@
 @section('content')
 <div class="row">
     <div class="col-md-12 glazed">
-        <h2>All Listings</h2>
+        <h2>My Posts</h2>
         @foreach ($posts as $post)
             <hr />
             <div class="row">
@@ -28,7 +28,7 @@
                             <a href=" {{ url('post/' . $post->id) }} ">View Details</a>
                         </p>
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-sm-2">
                         <dl>
                             <dt>Address: </dt>
                             <dd>{{ $post->address }}</dd>
@@ -41,6 +41,12 @@
                             <dt>Price: </dt>
                             <dd>{{ $post->price }}</dd>
                         </dl>
+                    </div>
+                    <div class="col-sm-2">
+                        <a class="btn btn-primary" href="{{ route('post.edit', $post->id) }}"><span class="glyphicon glyphicon-pencil"></span></a>
+                        {!! Form::open(array('route' => array('post.destroy', $post->id), 'method' => 'delete')) !!}
+                        <button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button>
+                        {!! Form::close() !!}
                     </div>
                 </div>
             </div>

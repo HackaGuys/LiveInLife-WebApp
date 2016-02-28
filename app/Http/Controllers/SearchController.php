@@ -16,7 +16,7 @@ class SearchController extends Controller {
         $posts = Post::where('city', $city)->where('province', $province)->get();
 
         if (count($posts) == 0) {
-            return view('search.error', array('message' => 'There are currently no postings for' . $city . ', ' . $province));
+            return view('search.error', array('message' => 'There are currently no postings for ' . $city . ', ' . $province));
         }
 
         foreach ($posts as $post) {

@@ -1,6 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
+    @if (Session::has('message'))
+        <div class="row">
+            <div class="alert alert-success col-md-8 col-md-offset-2">
+                {{ Session::get('message') }}
+            </div>
+        </div>
+    @endif
     <div class="row">
         <div class="col-sm-8 col-sm-offset-2 glazed">
             <h2>Find your dream home.</h2>
