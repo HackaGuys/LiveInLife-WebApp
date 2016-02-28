@@ -37,6 +37,12 @@ Route::group(['middleware' => 'web'], function () {
 
 });
 
+Route::group(['prefix' => 'api'], function()
+{
+    Route::resource('authenticate', 'AuthenticateController', ['only' => ['index']]);
+    Route::post('authenticate', 'AuthenticateController@authenticate');
+});
+
 Route::resource('post', 'PostController');
 Route::get('api/posts', 'ApiController@getPosts');
 Route::post('api/posts/', 'ApiController@storePost');
