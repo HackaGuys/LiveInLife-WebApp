@@ -14,6 +14,10 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
+
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
+
             $table->string('address');
             $table->string('city');
             $table->string('province');
@@ -21,6 +25,9 @@ class CreatePostsTable extends Migration
             $table->integer('bedrooms');
             $table->integer('sqfeet');
             $table->integer('price');
+
+            $table->text('description');
+
             $table->timestamps();
         });
     }
