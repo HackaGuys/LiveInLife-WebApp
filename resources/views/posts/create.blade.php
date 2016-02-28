@@ -7,7 +7,8 @@
         </div>
     @endif
     <div class="row">
-        <div class="col-md-4 col-md-offset-4">
+        <div class="col-md-4 col-md-offset-4 glazed">
+            <h2>Create a listing.</h2>
             {!! Form::open(array('route' => 'post.store', 'files' => 'true')) !!}
             <div class="form-group">
                 {!! Form::label('address', 'Address') !!} <br />

@@ -21,7 +21,6 @@ class PostController extends Controller
     }
 
     public function index() {
-
             $posts = Post::all();
 
             foreach ($posts as $post) {

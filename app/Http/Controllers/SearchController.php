@@ -11,5 +11,26 @@ use App\Http\Requests;
 class SearchController extends Controller {
     public function search(Request $request) {
         $city = $request->input('city');
+        $province = $request->input('province');
+
+        $posts = Post::where('city', $city)->where('province', $province)->get();
+
+        if (!$posts) {
+            return view('search.error', array('message' => 'There are currently no postings for' . $city . ', ' . $province));
+        }
+
+        foreach ($posts as $post) {
+            // Format the price
+            $post->price = $this->asDollars($post->price);
+
+            // Get the images
+            $image = Image::where('post_id', $post->id)->first();
+
+            if ($image) {
+                $post->thumbnail = $image->thumbnail_filename;
+            }
+        }
+
+        return view('search.search', array('posts' => $posts, 'city' => $city, 'province' => $province));
     }
 }

@@ -2,7 +2,8 @@
 
 @section('content')
 <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-12 glazed">
+        <h2>Posting Details</h2>
         <div class="col-md-4 col-xs-6">
             <div class="col-xs-12">
                 @if ($post->main_image != null)
@@ -24,6 +25,7 @@
             @endif
         </div>
         <div class="col-md-4 hidden-sm hidden-xs">
+            <b>Description:</b>
             <p>
                 {{ $post->description }}
             </p>
@@ -46,6 +48,7 @@
         </div>
         <div class="col-xs-8 col-xs-offset-2 visible-sm visible-xs">
             <p>
+                <b>Description:</b>
                 {{ $post->description }}
             </p>
         </div>

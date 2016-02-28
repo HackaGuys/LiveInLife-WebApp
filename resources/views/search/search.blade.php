@@ -3,7 +3,7 @@
 @section('content')
 <div class="row">
     <div class="col-md-12 glazed">
-        <h2>All Listings</h2>
+        <h2>Listings for {{ $city }}, {{ $province }}</h2>
         @foreach ($posts as $post)
             <hr />
             <div class="row">
