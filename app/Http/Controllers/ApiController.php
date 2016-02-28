@@ -25,10 +25,18 @@ class ApiController extends Controller
 
     public function storePost(Request $request)
     {
-        $this->post = new Post();
-        $this->post->fill($request);
-        $this->post->user_id = 1;
+        $post = new Post();
 
-        $this->post->save();
+                $post->user_id = 1;
+                $post->address = $request->input('address');
+                $post->city = $request->input('city');
+                $post->province = $request->input('province');
+                $post->zip = $request->input('zip');
+                $post->bedrooms = $request->input('bedrooms');
+                $post->sqfeet = $request->input('sqfeet');
+                $post->price = $request->input('price');
+        $post->description = $request->input('description');
+
+        $post->save();
     }
 }
