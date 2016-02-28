@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="row">
-    <div class="col-md-12 glazed">
+    <div class="col-xs-12 glazed">
         <h2>Posting Details</h2>
         <div class="col-md-4 col-xs-6">
             <div class="col-xs-12">
@@ -56,34 +56,36 @@
                 {{ $post->description }}
             </p>
         </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12 glazed">
 
-        <div class="row">
-            <div class="col-md-6">
-                <h2>Nearby Hotspots</h2>
-                @foreach($post->venues as $venue)
-                    @if(count($venue->categories))
-                        <div class="venue">
-                            <img src="{{ $venue->categories[0]->icon->prefix or ""}}64{{$venue->categories[0]->icon->suffix or ""}}" class="category-icon"/>
-                            <div class="venue-info">
-                                <div>{{$venue->name}}</div>
-                                <div>{{$venue->contact->formattedPhone or ""}}</div>
-                                <div>{{$venue->location->address or ""}}</div>
-                            </div>
+        <div class="col-md-6">
+            <h2>Nearby Hotspots</h2>
+            @foreach($post->venues as $venue)
+                @if(count($venue->categories))
+                    <div class="venue">
+                        <img src="{{ $venue->categories[0]->icon->prefix or ""}}64{{$venue->categories[0]->icon->suffix or ""}}" class="category-icon"/>
+                        <div class="venue-info">
+                            <div>{{$venue->name}}</div>
+                            <div>{{$venue->contact->formattedPhone or ""}}</div>
+                            <div>{{$venue->location->address or ""}}</div>
                         </div>
-                    @endif
-                @endforeach
-            </div>
+                    </div>
+                @endif
+            @endforeach
+        </div>
 
-            <div class="col-md-6">
-                <h2>Map</h2>
-                <iframe
-                        width="100%"
-                        height="350"
-                        frameborder="0" style="border:0"
-                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyARB60vYWpNMf4QiTjKFRluFWFTJdQjP1Y
-                        &q={{$post->address}}+{{$post->city}}+{{$post->province}}" allowfullscreen>
-                </iframe>
-            </div>
+        <div class="col-md-6">
+            <h2>Map</h2>
+            <iframe
+                    width="100%"
+                    height="350"
+                    frameborder="0" style="border:0"
+                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyARB60vYWpNMf4QiTjKFRluFWFTJdQjP1Y
+                    &q={{$post->address}}+{{$post->city}}+{{$post->province}}" allowfullscreen>
+            </iframe>
         </div>
     </div>
 </div>
