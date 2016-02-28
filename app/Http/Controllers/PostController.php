@@ -39,14 +39,21 @@ class PostController extends Controller
 
     public function show($id) {
         if (Auth::check()) {
-            $post    = Post::where('id', $id)->first();
-            $images = Image::where('post_id', $id)->get();
+            $post = Post::where('id', $id)->first();
 
-            if($images) {
-                $post->images = $images;
+            if (!$post) {
+                return Redirect::to('post');
             }
 
-            return view('posts.show', array('post', $post));
+            $main_image = Image::where('post_id', $id)->first();
+            $images     = Image::where('post_id', $id)->get();
+
+            if($main_image) {
+                $post->main_image = $main_image;
+                $post->images     = $images;
+            }
+
+            return view('posts.show', array('post' => $post));
         }
         return Redirect::to('login');
     }

@@ -5,15 +5,19 @@
     <div class="col-md-12">
         <div class="col-sm-4">
             <div class="col-xs-12">
-                @if ($post->images != null)
-
+                @if ($post->main_image != null)
+                    <img id="main_image" class="img-responsive" src="{{ asset('/uploads/' . $post->main_image->filename) }}" />
+                @else
+                    <img class="img-responsive" src="http://placehold.it/300x200" />
                 @endif
             </div>
-            @foreach($post->images as $image)
-                <divl class="col-xs-3">
-                    <img class="img-responsive" src="{{ asset('/uploads/' . $post->thumbnail) }}" />
-                </divl>
-            @endforeach
+            @if ($post->main_image != null)
+                @foreach($post->images as $image)
+                    <divl class="col-xs-4">
+                        <img class="img-responsive thumbnail" src="{{ asset('/uploads/' . $image->thumbnail_filename) }}" />
+                    </divl>
+                @endforeach
+            @endif
         </div>
         <div class="col-sm-4">
             <p>
@@ -38,4 +42,9 @@
         </div>
     </div>
 </div>
+<script>
+    $('.thumbnail').hover(function() {
+        $('#main_image').attr('src', $(this).attr('src'));
+    });
+</script>
 @endsection
