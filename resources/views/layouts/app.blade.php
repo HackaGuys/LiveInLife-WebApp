@@ -45,7 +45,7 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    LiveInLife
+                    <img src="{{ asset('assets/img/logo.png') }}" style="height:25px" />
                 </a>
             </div>
 
