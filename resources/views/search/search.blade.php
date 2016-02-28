@@ -20,7 +20,6 @@
                     <div class="col-sm-4">
                         <p>
                             @if (strlen($post->description) > 150)
-                                hi
                                 {{ substr($post->description, 0, 150) }}...
                             @else
                                 {{ $post->description }}
