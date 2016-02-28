@@ -45,3 +45,5 @@ Route::group(['prefix' => 'api'], function()
 
 Route::get('api/posts', 'ApiController@getPosts');
 Route::post('api/posts/', 'ApiController@storePost');
+
+Route::post('search', 'SearchController@search');
