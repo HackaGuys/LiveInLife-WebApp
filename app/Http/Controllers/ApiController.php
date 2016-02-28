@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\Post;
+use App\Image;
 
 use App\Http\Requests;
 
@@ -17,6 +18,7 @@ class ApiController extends Controller
     public function getPosts()
     {
         $posts = Post::all();
+        $posts->load('images');
         return response()->json($posts);
     }
 
