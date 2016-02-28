@@ -21,7 +21,7 @@ class PostController extends Controller
     }
 
     public function index() {
-        if (Auth::check()) {
+
             $posts = Post::all();
 
             foreach ($posts as $post) {
@@ -37,8 +37,7 @@ class PostController extends Controller
             }
 
             return view('posts.index', array('posts' => $posts));
-        }
-        return Redirect::to('login');
+
     }
 
     public function show($id) {
