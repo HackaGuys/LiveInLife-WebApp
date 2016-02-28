@@ -13,7 +13,7 @@ class SearchController extends Controller {
         $city = ucwords($request->input('city'));
         $province = ucwords($request->input('province'));
 
-        $posts = Post::where('city', $city)->where('province', $province)->get();
+        $posts = Post::where('city', $city)->get();
 
         if (count($posts) == 0) {
             return view('search.error', array('message' => 'There are currently no postings for ' . $city . ', ' . $province));
