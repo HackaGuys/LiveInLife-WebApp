@@ -37,5 +37,6 @@ Route::group(['middleware' => 'web'], function () {
 
 });
 
-
-Route::resource('api/posts', 'PostsController');
+Route::resource('post', 'PostController');
+Route::get('api/posts', 'ApiController@getPosts');
+Route::get('api/posts/store', 'ApiController@storePost');

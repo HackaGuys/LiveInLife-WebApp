@@ -1181,3 +1181,315 @@ Stack trace:
 #36 /Users/jacky/Desktop/LiveInLife-WebApp/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(99): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
 #37 /Users/jacky/Desktop/LiveInLife-WebApp/public/index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
 #38 {main}  
+[2016-02-28 04:16:35] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'Collective\Html\HtmlServiceProvider' not found' in C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Foundation\ProviderRepository.php:146
+Stack trace:
+#0 {main}  
+[2016-02-28 04:27:58] local.ERROR: exception 'ReflectionException' with message 'Class App\Http\Controllers\ApiController does not exist' in C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Route.php:264
+Stack trace:
+#0 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Route.php(264): ReflectionMethod->__construct('App\\Http\\Contro...', 'getPosts')
+#1 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(859): Illuminate\Routing\Route->signatureParameters('Illuminate\\Data...')
+#2 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(844): Illuminate\Routing\Router->substituteImplicitBindings(Object(Illuminate\Routing\Route))
+#3 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(827): Illuminate\Routing\Router->substituteBindings(Object(Illuminate\Routing\Route))
+#4 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(691): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#5 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(675): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#6 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(246): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#7 [internal function]: Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#8 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(52): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#9 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode.php(44): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#10 [internal function]: Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#11 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(124): call_user_func_array(Array, Array)
+#12 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#13 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(32): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#14 [internal function]: Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#15 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(103): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#16 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(132): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#17 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(99): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#18 C:\xampp\htdocs\LiveInLife\public\index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#19 {main}  
+[2016-02-28 04:33:04] local.ERROR: exception 'ReflectionException' with message 'Class App\Http\Controllers\PostsController does not exist' in C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Route.php:264
+Stack trace:
+#0 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Route.php(264): ReflectionMethod->__construct('App\\Http\\Contro...', 'index')
+#1 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(859): Illuminate\Routing\Route->signatureParameters('Illuminate\\Data...')
+#2 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(844): Illuminate\Routing\Router->substituteImplicitBindings(Object(Illuminate\Routing\Route))
+#3 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(827): Illuminate\Routing\Router->substituteBindings(Object(Illuminate\Routing\Route))
+#4 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(691): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#5 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(675): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#6 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(246): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#7 [internal function]: Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#8 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(52): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#9 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode.php(44): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#10 [internal function]: Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#11 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(124): call_user_func_array(Array, Array)
+#12 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#13 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(32): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#14 [internal function]: Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#15 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(103): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#16 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(132): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#17 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(99): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#18 C:\xampp\htdocs\LiveInLife\public\index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#19 {main}  
+[2016-02-28 04:33:18] local.ERROR: exception 'ReflectionException' with message 'Class App\Http\Controllers\PostsController does not exist' in C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Route.php:264
+Stack trace:
+#0 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Route.php(264): ReflectionMethod->__construct('App\\Http\\Contro...', 'index')
+#1 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(859): Illuminate\Routing\Route->signatureParameters('Illuminate\\Data...')
+#2 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(844): Illuminate\Routing\Router->substituteImplicitBindings(Object(Illuminate\Routing\Route))
+#3 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(827): Illuminate\Routing\Router->substituteBindings(Object(Illuminate\Routing\Route))
+#4 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(691): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#5 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(675): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#6 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(246): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#7 [internal function]: Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#8 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(52): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#9 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode.php(44): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#10 [internal function]: Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#11 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(124): call_user_func_array(Array, Array)
+#12 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#13 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(32): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#14 [internal function]: Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#15 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(103): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#16 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(132): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#17 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(99): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#18 C:\xampp\htdocs\LiveInLife\public\index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#19 {main}  
+[2016-02-28 04:35:38] local.ERROR: exception 'ReflectionException' with message 'Class App\Http\Controllers\PostsController does not exist' in C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Route.php:264
+Stack trace:
+#0 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Route.php(264): ReflectionMethod->__construct('App\\Http\\Contro...', 'index')
+#1 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(859): Illuminate\Routing\Route->signatureParameters('Illuminate\\Data...')
+#2 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(844): Illuminate\Routing\Router->substituteImplicitBindings(Object(Illuminate\Routing\Route))
+#3 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(827): Illuminate\Routing\Router->substituteBindings(Object(Illuminate\Routing\Route))
+#4 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(691): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#5 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(675): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#6 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(246): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#7 [internal function]: Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#8 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(52): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#9 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode.php(44): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#10 [internal function]: Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#11 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(124): call_user_func_array(Array, Array)
+#12 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#13 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(32): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#14 [internal function]: Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#15 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(103): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#16 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(132): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#17 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(99): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#18 C:\xampp\htdocs\LiveInLife\public\index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#19 {main}  
+[2016-02-28 04:36:17] local.ERROR: exception 'ReflectionException' with message 'Class App\Http\Controllers\PostsController does not exist' in C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Route.php:264
+Stack trace:
+#0 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Route.php(264): ReflectionMethod->__construct('App\\Http\\Contro...', 'index')
+#1 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(859): Illuminate\Routing\Route->signatureParameters('Illuminate\\Data...')
+#2 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(844): Illuminate\Routing\Router->substituteImplicitBindings(Object(Illuminate\Routing\Route))
+#3 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(827): Illuminate\Routing\Router->substituteBindings(Object(Illuminate\Routing\Route))
+#4 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(691): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#5 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(675): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#6 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(246): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#7 [internal function]: Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#8 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(52): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#9 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode.php(44): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#10 [internal function]: Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#11 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(124): call_user_func_array(Array, Array)
+#12 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#13 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(32): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#14 [internal function]: Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#15 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(103): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#16 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(132): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#17 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(99): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#18 C:\xampp\htdocs\LiveInLife\public\index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#19 {main}  
+[2016-02-28 04:36:53] local.ERROR: exception 'Symfony\Component\Console\Exception\CommandNotFoundException' with message 'Command "make:Controller" is not defined.
+
+Did you mean one of these?
+    make:controller
+    make:console
+    make:request
+    make:seeder
+    make:provider
+    make:migration
+    make:policy
+    make:test
+    make:middleware
+    make:event
+    make:job
+    make:listener
+    make:auth
+    make:model' in C:\xampp\htdocs\LiveInLife\vendor\symfony\console\Application.php:512
+Stack trace:
+#0 C:\xampp\htdocs\LiveInLife\vendor\symfony\console\Application.php(183): Symfony\Component\Console\Application->find('make:Controller')
+#1 C:\xampp\htdocs\LiveInLife\vendor\symfony\console\Application.php(117): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#2 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Foundation\Console\Kernel.php(107): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#3 C:\xampp\htdocs\LiveInLife\artisan(36): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#4 {main}  
+[2016-02-28 04:37:19] local.ERROR: exception 'ReflectionException' with message 'Class App\Http\Controllers\PostsController does not exist' in C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Route.php:264
+Stack trace:
+#0 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Route.php(264): ReflectionMethod->__construct('App\\Http\\Contro...', 'index')
+#1 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(859): Illuminate\Routing\Route->signatureParameters('Illuminate\\Data...')
+#2 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(844): Illuminate\Routing\Router->substituteImplicitBindings(Object(Illuminate\Routing\Route))
+#3 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(827): Illuminate\Routing\Router->substituteBindings(Object(Illuminate\Routing\Route))
+#4 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(691): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#5 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(675): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#6 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(246): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#7 [internal function]: Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#8 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(52): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#9 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode.php(44): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#10 [internal function]: Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#11 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(124): call_user_func_array(Array, Array)
+#12 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#13 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(32): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#14 [internal function]: Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#15 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(103): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#16 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(132): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#17 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(99): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#18 C:\xampp\htdocs\LiveInLife\public\index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#19 {main}  
+[2016-02-28 04:37:47] local.ERROR: exception 'ReflectionException' with message 'Class App\Http\Controllers\PostsController does not exist' in C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Route.php:264
+Stack trace:
+#0 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Route.php(264): ReflectionMethod->__construct('App\\Http\\Contro...', 'index')
+#1 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(859): Illuminate\Routing\Route->signatureParameters('Illuminate\\Data...')
+#2 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(844): Illuminate\Routing\Router->substituteImplicitBindings(Object(Illuminate\Routing\Route))
+#3 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(827): Illuminate\Routing\Router->substituteBindings(Object(Illuminate\Routing\Route))
+#4 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(691): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#5 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(675): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#6 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(246): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#7 [internal function]: Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#8 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(52): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#9 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode.php(44): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#10 [internal function]: Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#11 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(124): call_user_func_array(Array, Array)
+#12 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#13 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(32): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#14 [internal function]: Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#15 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(103): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#16 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(132): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#17 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(99): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#18 C:\xampp\htdocs\LiveInLife\public\index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#19 {main}  
+[2016-02-28 04:38:23] local.ERROR: exception 'ReflectionException' with message 'Class App\Http\Controllers\PostsController does not exist' in C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Route.php:264
+Stack trace:
+#0 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Route.php(264): ReflectionMethod->__construct('App\\Http\\Contro...', 'index')
+#1 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(859): Illuminate\Routing\Route->signatureParameters('Illuminate\\Data...')
+#2 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(844): Illuminate\Routing\Router->substituteImplicitBindings(Object(Illuminate\Routing\Route))
+#3 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(827): Illuminate\Routing\Router->substituteBindings(Object(Illuminate\Routing\Route))
+#4 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(691): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#5 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(675): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#6 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(246): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#7 [internal function]: Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#8 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(52): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#9 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode.php(44): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#10 [internal function]: Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#11 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(124): call_user_func_array(Array, Array)
+#12 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#13 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(32): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#14 [internal function]: Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#15 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(103): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#16 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(132): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#17 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(99): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#18 C:\xampp\htdocs\LiveInLife\public\index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#19 {main}  
+[2016-02-28 04:38:58] local.ERROR: exception 'ReflectionException' with message 'Class App\Http\Controllers\PostsController does not exist' in C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Route.php:264
+Stack trace:
+#0 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Route.php(264): ReflectionMethod->__construct('App\\Http\\Contro...', 'index')
+#1 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(859): Illuminate\Routing\Route->signatureParameters('Illuminate\\Data...')
+#2 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(844): Illuminate\Routing\Router->substituteImplicitBindings(Object(Illuminate\Routing\Route))
+#3 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(827): Illuminate\Routing\Router->substituteBindings(Object(Illuminate\Routing\Route))
+#4 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(691): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#5 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(675): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#6 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(246): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#7 [internal function]: Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#8 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(52): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#9 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode.php(44): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#10 [internal function]: Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#11 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(124): call_user_func_array(Array, Array)
+#12 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#13 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(32): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#14 [internal function]: Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#15 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(103): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#16 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(132): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#17 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(99): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#18 C:\xampp\htdocs\LiveInLife\public\index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#19 {main}  
+[2016-02-28 04:39:36] local.ERROR: exception 'ReflectionException' with message 'Class App\Http\Controllers\PostsController does not exist' in C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Route.php:264
+Stack trace:
+#0 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Route.php(264): ReflectionMethod->__construct('App\\Http\\Contro...', 'index')
+#1 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(859): Illuminate\Routing\Route->signatureParameters('Illuminate\\Data...')
+#2 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(844): Illuminate\Routing\Router->substituteImplicitBindings(Object(Illuminate\Routing\Route))
+#3 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(827): Illuminate\Routing\Router->substituteBindings(Object(Illuminate\Routing\Route))
+#4 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(691): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#5 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(675): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#6 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(246): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#7 [internal function]: Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#8 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(52): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#9 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode.php(44): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#10 [internal function]: Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#11 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(124): call_user_func_array(Array, Array)
+#12 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#13 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(32): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#14 [internal function]: Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#15 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(103): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#16 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(132): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#17 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(99): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#18 C:\xampp\htdocs\LiveInLife\public\index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#19 {main}  
+[2016-02-28 04:41:07] local.ERROR: exception 'ReflectionException' with message 'Method App\Http\Controllers\TestController::index() does not exist' in C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Route.php:264
+Stack trace:
+#0 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Route.php(264): ReflectionMethod->__construct('App\\Http\\Contro...', 'index')
+#1 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(859): Illuminate\Routing\Route->signatureParameters('Illuminate\\Data...')
+#2 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(844): Illuminate\Routing\Router->substituteImplicitBindings(Object(Illuminate\Routing\Route))
+#3 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(827): Illuminate\Routing\Router->substituteBindings(Object(Illuminate\Routing\Route))
+#4 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(691): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#5 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(675): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#6 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(246): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#7 [internal function]: Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#8 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(52): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#9 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode.php(44): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#10 [internal function]: Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#11 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(124): call_user_func_array(Array, Array)
+#12 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#13 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(32): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#14 [internal function]: Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#15 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(103): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#16 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(132): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#17 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(99): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#18 C:\xampp\htdocs\LiveInLife\public\index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#19 {main}  
+[2016-02-28 04:42:25] local.ERROR: exception 'ReflectionException' with message 'Class App\Http\Controllers\PostsController does not exist' in C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Route.php:264
+Stack trace:
+#0 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Route.php(264): ReflectionMethod->__construct('App\\Http\\Contro...', 'index')
+#1 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(859): Illuminate\Routing\Route->signatureParameters('Illuminate\\Data...')
+#2 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(844): Illuminate\Routing\Router->substituteImplicitBindings(Object(Illuminate\Routing\Route))
+#3 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(827): Illuminate\Routing\Router->substituteBindings(Object(Illuminate\Routing\Route))
+#4 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(691): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#5 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(675): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#6 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(246): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#7 [internal function]: Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#8 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(52): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#9 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode.php(44): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#10 [internal function]: Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#11 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(124): call_user_func_array(Array, Array)
+#12 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#13 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(32): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#14 [internal function]: Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#15 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(103): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#16 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(132): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#17 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(99): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#18 C:\xampp\htdocs\LiveInLife\public\index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#19 {main}  
+[2016-02-28 04:42:34] local.ERROR: exception 'ReflectionException' with message 'Class App\Http\Controllers\PostsController does not exist' in C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Route.php:264
+Stack trace:
+#0 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Route.php(264): ReflectionMethod->__construct('App\\Http\\Contro...', 'index')
+#1 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(859): Illuminate\Routing\Route->signatureParameters('Illuminate\\Data...')
+#2 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(844): Illuminate\Routing\Router->substituteImplicitBindings(Object(Illuminate\Routing\Route))
+#3 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(827): Illuminate\Routing\Router->substituteBindings(Object(Illuminate\Routing\Route))
+#4 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(691): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#5 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Router.php(675): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#6 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(246): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#7 [internal function]: Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#8 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(52): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#9 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode.php(44): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#10 [internal function]: Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#11 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(124): call_user_func_array(Array, Array)
+#12 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#13 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(32): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#14 [internal function]: Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#15 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(103): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#16 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(132): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#17 C:\xampp\htdocs\LiveInLife\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(99): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#18 C:\xampp\htdocs\LiveInLife\public\index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#19 {main}  
