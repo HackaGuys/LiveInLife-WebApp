@@ -45,7 +45,7 @@
                     <div class="col-sm-2">
                         <a class="btn btn-primary" href="{{ route('post.edit', $post->id) }}"><span class="glyphicon glyphicon-pencil"></span></a>
                         {!! Form::open(array('route' => array('post.destroy', $post->id), 'method' => 'delete')) !!}
-                        <button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button>
+                        <button type="submit" class="btn btn-danger delete"><span class="glyphicon glyphicon-trash"></span></button>
                         {!! Form::close() !!}
                     </div>
                 </div>
@@ -53,4 +53,7 @@
         @endforeach
     </div>
 </div>
+<script>
+    $(".delete").popConfirm();
+</script>
 @endsection
