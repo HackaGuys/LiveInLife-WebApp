@@ -60,17 +60,19 @@
 </div>
 <div class="row">
     <div class="col-xs-12 glazed">
-
         <div class="col-md-6">
             <h2>Nearby Hotspots</h2>
             @foreach($post->venues as $venue)
-                @if(count($venue->categories))
+                @if($first == true)
+                   {{ $first = false }}
+                @elseif(count($venue->categories))
                     <div class="venue">
                         <img src="{{ $venue->categories[0]->icon->prefix or ""}}64{{$venue->categories[0]->icon->suffix or ""}}" class="category-icon"/>
                         <div class="venue-info">
                             <div>{{$venue->name}}</div>
                             <div>{{$venue->contact->formattedPhone or ""}}</div>
                             <div>{{$venue->location->address or ""}}</div>
+                            <div>{{$venue->location->distance or ""}} meters</div>
                         </div>
                     </div>
                 @endif

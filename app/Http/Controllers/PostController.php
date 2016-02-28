@@ -62,7 +62,7 @@ class PostController extends Controller
             $location   = $this->getCoordinates($post->address, $post->city, $post->province);
 
             // Get foursquare data
-            $json = file_get_contents('https://api.foursquare.com/v2/venues/search?ll=' . $location['lat'] . ',' . $location['lng'] . '&client_id=UDNOKJGW1TZDLVCU5UELS33ERA3MCXCM2U4U2513P3CDJM2K&client_secret=T1NIPNFJZCOFVXEDNXQFE2HZNXJCAG50VWE40AIUP0RKTNPA&v=20160217&limit=5');
+            $json = file_get_contents('https://api.foursquare.com/v2/venues/search?ll=' . $location['lat'] . ',' . $location['lng'] . '&client_id=UDNOKJGW1TZDLVCU5UELS33ERA3MCXCM2U4U2513P3CDJM2K&client_secret=T1NIPNFJZCOFVXEDNXQFE2HZNXJCAG50VWE40AIUP0RKTNPA&v=20160217&limit=6');
             $obj  = json_decode($json);
 
             $post->venues = $obj->response->venues;
@@ -73,7 +73,7 @@ class PostController extends Controller
                 $post->email      = $email;
             }
 
-            return view('posts.show', array('post' => $post));
+            return view('posts.show', array('post' => $post, 'first' => true));
         }
         return Redirect::to('login');
     }
