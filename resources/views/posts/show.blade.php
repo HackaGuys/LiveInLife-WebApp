@@ -52,6 +52,20 @@
                 {{ $post->description }}
             </p>
         </div>
+
+        <div class="col-md-12">
+            <h2>Nearby Hotspots</h2>
+            @foreach($post->venues as $venue)
+                <div class="venue">
+                    <div><img src="{{ $venue->categories[0]->icon->prefix }}64{{$venue->categories[0]->icon->suffix}}" class="category-icon"/></div>
+                    <div class="venue-info">
+                        <div>{{$venue->name}}</div>
+                        <div>{{$venue->contact->formattedPhone or ""}}</div>
+                        <div>{{$venue->location->address or ""}}</div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
     </div>
 </div>
 <div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="Image" aria-hidden="true">

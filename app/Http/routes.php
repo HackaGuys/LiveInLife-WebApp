@@ -37,6 +37,7 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::get('/', 'HomeController@index');
     Route::resource('post', 'PostController');
+    Route::post('search', 'SearchController@search');
 });
 
 Route::group(['prefix' => 'api'], function()
@@ -48,4 +49,3 @@ Route::group(['prefix' => 'api'], function()
 Route::get('api/posts', 'ApiController@getPosts');
 Route::post('api/posts/', 'ApiController@storePost');
 
-Route::post('search', 'SearchController@search');
