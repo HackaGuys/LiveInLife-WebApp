@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 
 use App\Http\Requests;
 use App\Post;
+use App\Image;
 use Illuminate\Support\Facades\Validator;
 use Session;
 use Illuminate\Support\Facades\Redirect;
@@ -22,7 +23,30 @@ class PostController extends Controller
     public function index() {
         if (Auth::check()) {
             $posts = Post::all();
-            return response()->json($posts);
+
+            foreach ($posts as $post) {
+                $image = Image::where('post_id', $post->id)->first();
+
+                if ($image) {
+                    $post->thumbnail = $image->thumbnail_filename;
+                }
+            }
+
+            return view('posts.index', array('posts' => $posts));
+        }
+        return Redirect::to('login');
+    }
+
+    public function show($id) {
+        if (Auth::check()) {
+            $post    = Post::where('id', $id)->first();
+            $images = Image::where('post_id', $id)->get();
+
+            if($images) {
+                $post->images = $images;
+            }
+
+            return view('posts.show', array('post', $post));
         }
         return Redirect::to('login');
     }
