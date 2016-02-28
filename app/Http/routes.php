@@ -34,9 +34,9 @@ Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
     Route::get('/home', 'HomeController@index');
+    Route::resource('post', 'PostController');
 
 });
 
-Route::resource('post', 'PostController');
 Route::get('api/posts', 'ApiController@getPosts');
 Route::post('api/posts/', 'ApiController@storePost');
